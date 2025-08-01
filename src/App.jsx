@@ -1,14 +1,15 @@
-import Hero from "./sections/Hero"
-import ShowcaseSection from "./sections/ShowcaseSection"
-
+import Navbar from './components/Navbar';
+import Hero from './sections/Hero';
+import ShowcaseSection from './sections/ShowcaseSection';
 
 const App = () => {
   return (
     <>
-    <Hero />
-    <ShowcaseSection />
+      <Navbar />
+      <Hero />
+      <ShowcaseSection />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
