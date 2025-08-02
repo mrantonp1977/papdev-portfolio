@@ -114,7 +114,7 @@ section {
     }
 
     .inner {
-      @apply mx-auto flex items-center justify-between;
+      @apply mx-auto flex items-center justify-between font-semibold text-lg;
     }
 
     .logo {
