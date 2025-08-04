@@ -1,5 +1,6 @@
 import React from 'react'
-import { abilities } from '../../constants'
+import { abilities } from '../constants'
+
 
 const FeatureCards = () => {
   return (

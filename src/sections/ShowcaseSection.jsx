@@ -1,15 +1,15 @@
-import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React, { useRef } from 'react';
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ShowcaseSection = () => {
+const AppShowcase = () => {
   const sectionRef = useRef(null);
-  const project1Ref = useRef(null);
-  const project2Ref = useRef(null);
-  const project3Ref = useRef(null);
+  const rydeRef = useRef(null);
+  const libraryRef = useRef(null);
+  const ycDirectoryRef = useRef(null);
 
   useGSAP(() => {
     // Animation for the main section
@@ -20,7 +20,7 @@ const ShowcaseSection = () => {
     );
 
     // Animations for each app showcase
-    const cards = [project1Ref.current, project2Ref.current, project3Ref.current];
+    const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
 
     cards.forEach((card, index) => {
       gsap.fromTo(
@@ -42,46 +42,49 @@ const ShowcaseSection = () => {
       );
     });
   }, []);
+
   return (
-    <section id="work" ref={sectionRef} className="app-showcase">
+    <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
         <div className="showcaselayout">
-          <div className="first-project-wrapper" ref={project1Ref}>
+          <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde" />
+              <img src="/images/project1.png" alt="Ryde App Interface" />
             </div>
             <div className="text-content">
               <h2>
-                On demand Rides made simple with a powerful, User-Friendly App
+                On-Demand Rides Made Simple with a Powerful, User-Friendly App
                 called Ryde
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app build with React Native, Expo and TailwindCSS for a fast
+                An app built with React Native, Expo, & TailwindCSS for a fast,
                 user-friendly experience.
               </p>
             </div>
           </div>
+
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={project2Ref}>
-              <div className="image-wrapper bg-[#ffefdb]">
+            <div className="project" ref={libraryRef}>
+              <div className="image-wrapper bg-[#FFEFDB]">
                 <img
                   src="/images/project2.png"
-                  alt="Library managment platform"
+                  alt="Library Management Platform"
                 />
               </div>
-              <h2>Library Management Platform</h2>
+              <h2>The Library Management Platform</h2>
             </div>
-            <div className="project" ref={project3Ref}>
-              <div className="image-wrapper bg-[#ffe7eb]">
-                <img src="/images/project3.png" alt="YC Directory" />
+
+            <div className="project" ref={ycDirectoryRef}>
+              <div className="image-wrapper bg-[#FFE7EB]">
+                <img src="/images/project3.png" alt="YC Directory App" />
               </div>
               <h2>YC Directory - A Startup Showcase App</h2>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default ShowcaseSection;
+export default AppShowcase;

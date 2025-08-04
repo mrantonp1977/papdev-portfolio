@@ -1,7 +1,10 @@
-import React from 'react';
+
 import TitleHeader from '../components/TitleHeader';
-import { techStackIcons } from '../../constants';
+
 import TechIcon from '../components/Models/TechLogos/TechIcon';
+import { techStackImgs } from '../constants';
+
+
 
 const TechStack = () => {
   return (
@@ -12,15 +15,15 @@ const TechStack = () => {
           sub="🤝 The Skills I Bring to the Table"
         />
         <div className="tech-grid">
-          {techStackIcons.map((icon) => (
+          {techStackImgs.map((icon, index) => (
             <div
-              key={icon.name}
+              key={index}
               className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg"
             >
               <div className="tech-card-animated-bg" />
               <div className="tech-card-content">
                 <div className="tech-icon-wrapper">
-                  <TechIcon model={icon} />
+                 <img src={icon.imgPath} alt="logo" />           
                 </div>
                 <div className="padding-x w-full">
                   <p>{icon.name}</p>
