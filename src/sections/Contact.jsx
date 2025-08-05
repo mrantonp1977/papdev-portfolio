@@ -6,6 +6,7 @@ import TitleHeader from '../components/TitleHeader';
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false); // ✅ success message state
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -19,7 +20,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
+    setSuccess(false); // Reset success message
 
     try {
       await emailjs.sendForm(
@@ -27,15 +29,17 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-      
       );
 
-      // Reset form and stop loading
       setForm({ name: '', email: '', message: '' });
+      setSuccess(true); // ✅ Show success message
+
+      // Optional: Clear success message after 5 seconds
+      setTimeout(() => setSuccess(false), 5000);
     } catch (error) {
-      console.error('EmailJS Error:', error); // Optional: show toast
+      console.error('EmailJS Error:', error);
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -104,6 +108,12 @@ const Contact = () => {
                     </div>
                   </div>
                 </button>
+
+                {success && (
+                  <p className="text-green-500 mt-4 text-sm">
+                    ✅ Message sent successfully!
+                  </p>
+                )}
               </form>
             </div>
           </div>
@@ -121,3 +131,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
