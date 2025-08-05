@@ -44,7 +44,7 @@ const Hero = () => {
               <Button 
                 className='md:w-80 md:h-16 w-60 h-12'
                 id="counter"
-                text="See my work"
+                text="See My Work"
                                
               />
           </div>
