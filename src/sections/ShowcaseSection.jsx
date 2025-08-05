@@ -48,7 +48,7 @@ const AppShowcase = () => {
       <div className="w-full">
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
-            <div className="image-wrapper">
+            <div className="image-wrapper opacity-75">
               <img src="/images/project1.png" alt="Ryde App Interface" />
             </div>
             <div className="text-content">
@@ -65,7 +65,7 @@ const AppShowcase = () => {
 
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={libraryRef}>
-              <div className="image-wrapper bg-[#FFEFDB]">
+              <div className="image-wrapper bg-[#FFEFDB] opacity-75">
                 <img
                   src="/images/project2.png"
                   alt="Library Management Platform"
@@ -75,7 +75,7 @@ const AppShowcase = () => {
             </div>
 
             <div className="project" ref={ycDirectoryRef}>
-              <div className="image-wrapper bg-[#FFE7EB]">
+              <div className="image-wrapper bg-[#FFE7EB] opacity-75">
                 <img src="/images/project3.png" alt="YC Directory App" />
               </div>
               <h2>YC Directory - A Startup Showcase App</h2>

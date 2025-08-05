@@ -121,7 +121,7 @@ const Contact = () => {
             <img
               src="/images/help.jpg"
               alt="help"
-              className="rounded-lg opacity-50"
+              className="rounded-lg opacity-40"
             />
           </div>
         </div>
